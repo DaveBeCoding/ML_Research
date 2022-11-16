@@ -1,0 +1,9 @@
+Simple Linear Regression 
+
+Multiple Linear Regression
+
+Build Regression
+
+Interpret it 
+
+Compare Different Models
