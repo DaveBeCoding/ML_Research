@@ -1,4 +1,11 @@
 Simple Linear Regression 
+    ->Linear Regression is a linear apporximation of a causal relationship
+    -between two or more variables
+    - Dependent Var-Y (being predicted)
+    - Indepent Var-X ...[X1,X2,...,Xk] (predictors)
+    - Y = F(X1,X2,...,Xk) -> Y is a function of independent vars x1 to xk
+    -the Regr model is a linear approx of this function ^
+    - γ = β0 + β1ϰ1 + ε -> y-dependent x-independent 
 
 Multiple Linear Regression
 
