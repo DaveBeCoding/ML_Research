@@ -6,4 +6,15 @@
 
 <!-- $k_{n+1}$ -->
 
-a_{n}=2*a_{n-1}
+<p>Recursive Formula</p>
+
+$a_{n}=2*a_{n-1}$
+
+<p>Sequence, each term is dependent on the previous terms.</p>
+<hr/>
+
+<p>Explicit Formula</p>
+
+$a_{n}=2^{n-1}$
+
+<p>Sequence where each term is found by using number of terms</p>
