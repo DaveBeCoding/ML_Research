@@ -18,3 +18,18 @@ $a_{n}=2*a_{n-1}$
 $a_{n}=2^{n-1}$
 
 <p>Sequence where each term is found by using number of terms</p>
+
+<p>Explicit vs Recursive</p>
+
+$a_{n}=1+2^n$
+
+$a_{n}=13{n}-{n}^2$
+
+$a_{n}=4*a_{n-1}+5$
+
+$a_{n}=2*a_{n-1}+3*a_{n-2}$ 
+
+
+
+
+
