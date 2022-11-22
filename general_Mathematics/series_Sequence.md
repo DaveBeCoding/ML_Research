@@ -34,3 +34,7 @@ $a_{n}=4*a_{n-1}+5$
 
 
 $a_{n} =2 * a_{n-1} + 3 * a_{n-2}$
+
+<p>Regression Model formula</p>
+
+$\hat{Y} = b_{0}+b_{1}X_{1}$
