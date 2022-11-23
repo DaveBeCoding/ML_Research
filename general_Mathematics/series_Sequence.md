@@ -19,6 +19,7 @@ $a_{n}=2*a_{n-1}$
 $a_{n}=2^{n-1}$
 
 <hr/>
+
 <!-- <p>Sequence where each term is found by using number of terms</p> -->
 
 <p>Explicit vs Recursive</p>
