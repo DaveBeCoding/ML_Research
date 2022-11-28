@@ -20,3 +20,9 @@ Create classes and methods for mathematical concepts
 Jennifer Loe lecture on why we care about GMRES. Optional?
 
 """
+
+import numpy as np 
+
+th_by_th = np.random.rand(1000, 1000)
+
+print(th_by_th)
