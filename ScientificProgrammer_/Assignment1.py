@@ -31,10 +31,12 @@ algorithm details: https://en.wikipedia.org/wiki/Generalized_minimal_residual_me
 class GMRES:
     def __init__(self) -> None:
         self.clear()
-        n = int(input("Enter Size of N for matrix rows "))
-        m = int(input("Enter Size of M for matrix columns "))
+        n = int(input("Enter Size of N rows "))
+        m = int(input("Enter Size of M columns "))
+        dens = int(input("Enter Density % of Matrix "))
         self.n = n
         self.m = m
+        self.dens = dens
     
     def clear(self): # system agnostic 
         if(name == 'nt'):
@@ -43,7 +45,8 @@ class GMRES:
             _ = system('clear')
 
     def greating(self) -> None:
-        print("The Size of the Matrix is " + str(self.n) + " x " + str(self.m))
+        print("The Size of the Matrix is " + '"' + str(self.n) + "x" 
+                    + str(self.m) + '"' + " with Density of " + str(self.dens)+"%")
         n_X_m = self.build_matrix()
         print(n_X_m)
         pause(STOP)
