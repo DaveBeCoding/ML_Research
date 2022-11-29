@@ -23,6 +23,7 @@ Create classes and methods for mathematical concepts
         submatrix
 Jennifer Loe lecture on why we care about GMRES. Optional?
 
+algorithm details: https://en.wikipedia.org/wiki/Generalized_minimal_residual_method
 """
 
 
