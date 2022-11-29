@@ -1,3 +1,7 @@
+from time import sleep as pause
+import numpy as np
+
+STOP = 0b11
 """
 
 Create infrastructure for studying this algorithm
@@ -21,8 +25,23 @@ Jennifer Loe lecture on why we care about GMRES. Optional?
 
 """
 
-import numpy as np 
 
-th_by_th = np.random.rand(1000, 1000)
+class GMRES:
 
-print(th_by_th)
+    def __init__(self) -> None:
+        n = int(input("Enter Size of N for matrix rows "))
+        m = int(input("Enter Size of M for matrix columns "))
+        self.n = n
+        self.m = m
+
+    def greating(self) -> None:
+        print("The Size of the Matrix is " + str(self.n) + " x " + str(self.m))
+        pause(STOP)
+
+    def main(self) -> None:
+        self.greating()
+
+
+if __name__ == "__main__":
+    gmres = GMRES()
+    gmres.main()
