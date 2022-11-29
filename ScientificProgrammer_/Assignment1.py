@@ -1,4 +1,5 @@
 from time import sleep as pause
+from os import system, name
 import numpy as np
 
 STOP = 0b11
@@ -28,16 +29,32 @@ algorithm details: https://en.wikipedia.org/wiki/Generalized_minimal_residual_me
 
 
 class GMRES:
-
     def __init__(self) -> None:
+        self.clear()
         n = int(input("Enter Size of N for matrix rows "))
         m = int(input("Enter Size of M for matrix columns "))
         self.n = n
         self.m = m
+    
+    def clear(self): # system agnostic 
+        if(name == 'nt'):
+            _ = system('cls')
+        else:
+            _ = system('clear')
 
     def greating(self) -> None:
         print("The Size of the Matrix is " + str(self.n) + " x " + str(self.m))
+        n_X_m = self.build_matrix()
+        print(n_X_m)
         pause(STOP)
+    
+    def build_matrix(self) -> int:
+        matrix = np.random.rand(self.n, self.m)
+        return matrix
+    
+    def density(self):
+        # (what % of elements are non-zero)
+        pass 
 
     def main(self) -> None:
         self.greating()
@@ -45,4 +62,6 @@ class GMRES:
 
 if __name__ == "__main__":
     gmres = GMRES()
+    # gmres.clear()
+    pause(STOP)
     gmres.main()
