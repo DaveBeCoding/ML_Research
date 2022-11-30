@@ -1,5 +1,7 @@
 from time import sleep as pause
+import scipy.sparse as sparse
 from os import system, name
+import scipy.stats as stats
 import numpy as np
 
 STOP = 0b11
@@ -33,10 +35,10 @@ class GMRES:
         self.clear()
         n = int(input("Enter Size of N rows "))
         m = int(input("Enter Size of M columns "))
-        dens = int(input("Enter Density % of Matrix "))
+        dens = int(input('Enter Density % of Matrix -> Example ".25" for 25% '))
         self.n = n
         self.m = m
-        self.dens = dens
+        self.dens = (dens / 100)
     
     def clear(self): # system agnostic 
         if(name == 'nt'):
@@ -52,8 +54,17 @@ class GMRES:
         pause(STOP)
     
     def build_matrix(self) -> int:
-        matrix = np.random.rand(self.n, self.m)
-        return matrix
+        # matrix = np.sparse.random(self.n, self.m, density=self.dens)
+        # np.random.seed(42)
+        # matrix = sparse.random(self.n, self.m, density=self.dens)
+        # return matrix
+        # set random seed to repeat
+        np.random.seed(42)
+        # create sparse matrix with density 0.25
+        A = sparse.random(5, 5, density=0.25)
+        # Convert the sparse matrix to a full matrix
+        print(str(A.toarray()))
+        return A.toarray()
     
     def density(self):
         # (what % of elements are non-zero)
