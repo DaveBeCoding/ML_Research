@@ -35,7 +35,7 @@ class GMRES:
         self.clear()
         n = int(input("Enter Size of N rows "))
         m = int(input("Enter Size of M columns "))
-        dens = int(input('Enter Density % of Matrix -> Example ".25" for 25% '))
+        dens = int(input('Enter Density % of Matrix -> Example "25" for 25% '))
         self.n = n
         self.m = m
         self.dens = (dens / 100)
@@ -54,16 +54,8 @@ class GMRES:
         pause(STOP)
     
     def build_matrix(self) -> int:
-        # matrix = np.sparse.random(self.n, self.m, density=self.dens)
-        # np.random.seed(42)
-        # matrix = sparse.random(self.n, self.m, density=self.dens)
-        # return matrix
-        # set random seed to repeat
         np.random.seed(42)
-        # create sparse matrix with density 0.25
-        A = sparse.random(5, 5, density=0.25)
-        # Convert the sparse matrix to a full matrix
-        print(str(A.toarray()))
+        A = sparse.random(self.n, self.m, density=self.dens)
         return A.toarray()
     
     def density(self):
