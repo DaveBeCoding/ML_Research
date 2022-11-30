@@ -1,5 +1,7 @@
 from time import sleep as pause
+import scipy.sparse as sparse
 from os import system, name
+import scipy.stats as stats
 import numpy as np
 
 STOP = 0b11
@@ -31,10 +33,12 @@ algorithm details: https://en.wikipedia.org/wiki/Generalized_minimal_residual_me
 class GMRES:
     def __init__(self) -> None:
         self.clear()
-        n = int(input("Enter Size of N for matrix rows "))
-        m = int(input("Enter Size of M for matrix columns "))
+        n = int(input("Enter Size of N rows "))
+        m = int(input("Enter Size of M columns "))
+        dens = int(input('Enter Density % of Matrix -> Example "25" for 25% '))
         self.n = n
         self.m = m
+        self.dens = (dens / 100)
     
     def clear(self): # system agnostic 
         if(name == 'nt'):
@@ -43,14 +47,16 @@ class GMRES:
             _ = system('clear')
 
     def greating(self) -> None:
-        print("The Size of the Matrix is " + str(self.n) + " x " + str(self.m))
+        print("The Size of the Matrix is " + '"' + str(self.n) + "x" 
+                    + str(self.m) + '"' + " with Density of " + str(self.dens)+"%")
         n_X_m = self.build_matrix()
         print(n_X_m)
         pause(STOP)
     
     def build_matrix(self) -> int:
-        matrix = np.random.rand(self.n, self.m)
-        return matrix
+        np.random.seed(42)
+        A = sparse.random(self.n, self.m, density=self.dens)
+        return A.toarray()
     
     def density(self):
         # (what % of elements are non-zero)
