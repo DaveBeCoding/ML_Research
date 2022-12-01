@@ -80,6 +80,9 @@ class GMRES:
         # Add further options, use Create_msg as a setup example
         self.Creating_msg()
 
+    def gmres(self):
+        print('Initializing Matrix')
+
     def menu(self):
         print('1. GMRES')
         print('2. Build Matrix')
@@ -90,21 +93,13 @@ class GMRES:
 
         match choice:
             case 1:
-                print('Choose case 1')
-                # self.greating()
-                # break
+                self.gmres()
             case 2:
-                print('Choose case 2')
-                # self.vector_b()
-                # break
+                self.build_matrix()
             case 3:
-                print('Choose case 3')
-                # self.build_matrix()
-                # break
+                self.vector_b()
             case 4:
-                self.main()
-                # self.main_msg()
-                # break
+                self.menu()
             case 5:
                 self.clear()
                 print('Exiting...')
@@ -118,7 +113,6 @@ class GMRES:
 try:
     if __name__ == "__main__":
         gmres = GMRES()
-        # gmres.clear()
         pause(STOP)
         gmres.main()
 except:
