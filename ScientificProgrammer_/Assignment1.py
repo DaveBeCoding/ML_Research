@@ -1,8 +1,9 @@
 from time import sleep as pause
 import scipy.sparse as sparse
-from os import system, name
+from os import system, name, _exit
 import scipy.stats as stats
 import numpy as np
+ 
 
 STOP = 0b11
 """
@@ -101,13 +102,15 @@ class GMRES:
                 # self.build_matrix()
                 # break
             case 4:
-                print('Choose case 4')
+                self.main()
                 # self.main_msg()
                 # break
             case 5:
-                print('Exiting')
-                # exit()
-                # break
+                self.clear()
+                print('Exiting...')
+                pause(STOP)
+                _exit(0)
+                
 
     def main(self) -> None:
         self.greating()
