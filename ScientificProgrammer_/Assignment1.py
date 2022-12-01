@@ -87,6 +87,28 @@ class GMRES:
         print('5. Exit')
         choice = int(input('Enter your choice: '))
 
+        match choice:
+            case 1:
+                print('Choose case 1')
+                # self.greating()
+                # break
+            case 2:
+                print('Choose case 2')
+                # self.vector_b()
+                # break
+            case 3:
+                print('Choose case 3')
+                # self.build_matrix()
+                # break
+            case 4:
+                print('Choose case 4')
+                # self.main_msg()
+                # break
+            case 5:
+                print('Exiting')
+                # exit()
+                # break
+
     def main(self) -> None:
         self.greating()
 
