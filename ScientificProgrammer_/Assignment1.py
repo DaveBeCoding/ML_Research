@@ -78,6 +78,7 @@ class GMRES:
         + ' Select from the following Options')
         self.menu()
         # Add further options, use Create_msg as a setup example
+        # Start here once test methods are flowing correctly
         self.Creating_msg()
 
     def gmres(self):
