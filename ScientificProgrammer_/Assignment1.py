@@ -36,7 +36,7 @@ algorithm details: https://en.wikipedia.org/wiki/Generalized_minimal_residual_me
 class GMRES:
     def __init__(self) -> None:
         self.clear()
-        self.Creating_msg()
+        self.main_msg()
     
     def clear(self): # system agnostic 
         if(name == 'nt'):
@@ -57,7 +57,7 @@ class GMRES:
         return A.toarray()
     
     def Creating_msg(self):
-        '''Create Matrix for Ax=b'''
+        '''Create Matrix-A for Ax=b'''
         print('Creating Matrix A')
         n = int(input("Enter Size of N rows "))
         m = int(input("Enter Size of M columns "))
@@ -66,16 +66,37 @@ class GMRES:
         self.m = m
         self.dens = (dens / 100)
     
-    def vector_b(slf):
+    def vector_b(self):
         '''Create Vector-b for Ax=b'''
-        pass
+        print('Creating Vector b')
+        v = int(input("Enter Size of Vector column "))
+        self.v = v
+    
+    def main_msg(self):
+        print('Welcome to the GMRES Assignment-1 Calulator, ' 
+        + ' Select from the following Options')
+        self.menu()
+        # Add further options, use Create_msg as a setup example
+        self.Creating_msg()
+
+    def menu(self):
+        print('1. GMRES')
+        print('2. Build Matrix')
+        print('3. Vector B')
+        print('4. Main Menu')
+        print('5. Exit')
+        choice = int(input('Enter your choice: '))
 
     def main(self) -> None:
         self.greating()
 
+try:
+    if __name__ == "__main__":
+        gmres = GMRES()
+        # gmres.clear()
+        pause(STOP)
+        gmres.main()
+except:
+    print("ERROR, Please check your configuration")
 
-if __name__ == "__main__":
-    gmres = GMRES()
-    # gmres.clear()
-    pause(STOP)
-    gmres.main()
+
