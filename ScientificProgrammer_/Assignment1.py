@@ -4,7 +4,6 @@ from os import system, name, _exit
 import scipy.stats as stats
 import numpy as np
  
-
 STOP = 0b11
 """
 Create infrastructure for studying this algorithm
@@ -31,7 +30,6 @@ Jennifer Loe lecture on why we care about GMRES. Optional?
 
 algorithm details: https://en.wikipedia.org/wiki/Generalized_minimal_residual_method
 """
-
 
 class GMRES:
     def __init__(self) -> None:
@@ -106,7 +104,6 @@ class GMRES:
                 pause(STOP)
                 _exit(0)
                 
-
     def main(self) -> None:
         self.greating()
 
@@ -117,5 +114,3 @@ try:
         gmres.main()
 except:
     print("ERROR, Please check your configuration")
-
-
