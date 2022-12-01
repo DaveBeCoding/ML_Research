@@ -7,7 +7,6 @@ import numpy as np
 
 STOP = 0b11
 """
-
 Create infrastructure for studying this algorithm
     Create a reasonable CLI (command-line interface) that allows the user to tweak settings like n, m and density (what % of elements are non-zero)
     Be able to generate random A matrices that will converge on a correct solution
