@@ -36,13 +36,7 @@ algorithm details: https://en.wikipedia.org/wiki/Generalized_minimal_residual_me
 class GMRES:
     def __init__(self) -> None:
         self.clear()
-        print('Create Matrix A')
-        n = int(input("Enter Size of N rows "))
-        m = int(input("Enter Size of M columns "))
-        dens = int(input('Enter Density % of Matrix -> Example "25" for 25% '))
-        self.n = n
-        self.m = m
-        self.dens = (dens / 100)
+        self.Creating_msg()
     
     def clear(self): # system agnostic 
         if(name == 'nt'):
@@ -62,9 +56,19 @@ class GMRES:
         A = sparse.random(self.n, self.m, density=self.dens)
         return A.toarray()
     
-    def density(self):
-        # (what % of elements are non-zero)
-        pass 
+    def Creating_msg(self):
+        '''Create Matrix for Ax=b'''
+        print('Creating Matrix A')
+        n = int(input("Enter Size of N rows "))
+        m = int(input("Enter Size of M columns "))
+        dens = int(input('Enter Density % of Matrix -> Example "25" for 25% '))
+        self.n = n
+        self.m = m
+        self.dens = (dens / 100)
+    
+    def vector_b(slf):
+        '''Create Vector-b for Ax=b'''
+        pass
 
     def main(self) -> None:
         self.greating()
