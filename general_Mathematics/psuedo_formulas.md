@@ -51,10 +51,21 @@ $\hat{Y} = b_{0}+b_{1}X_{1}$
 
 <p>GMRES PSUEDO CODE</p>
 
-<p markdown="1">1) $X_{0}$</p> 
-Choose
-
-$X_{0}$ 
+<p markdown="1">1) Start and Choose,  </p> 
 
 
-$\sum_{i=1}^n$
+$X_{0}$  <p> and compute</p> $r_{0} = f - Ax_{0}$ 
+
+and 
+
+$v_{1} =  r_{0}/||r_{0}||$
+
+<p>2) iterater: for </p> 
+
+$j = 1,2,3...m$
+
+do: [note: m should be the number of restart interations]
+
+$h_{i,j} = (Av_{j}, v_{i}), i = 1, 2, ..., j,$
+
+$\hat{v}_{j+1}$ = $Av_{j} - \sum_{i=1}^jh_{i}, j{vi},$
