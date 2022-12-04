@@ -46,3 +46,15 @@ $a_{n} =2 * a_{n-1} + 3 * a_{n-2}$
 <p>Regression Model formula</p>
 
 $\hat{Y} = b_{0}+b_{1}X_{1}$
+
+<hr/>
+
+<p>GMRES PSUEDO CODE</p>
+
+<p markdown="1">1) $X_{0}$</p> 
+Choose
+
+$X_{0}$ 
+
+
+$\sum_{i=1}^n$
