@@ -51,8 +51,10 @@ $\hat{Y} = b_{0}+b_{1}X_{1}$
 
 <p>GMRES PSUEDO CODE</p>
 
-<p>1) </p> 
-Choose $X_{0}$ 
+<p markdown="1">1) $X_{0}$</p> 
+Choose
+
+$X_{0}$ 
 
 
 $\sum_{i=1}^n$
