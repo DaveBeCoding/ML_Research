@@ -68,4 +68,4 @@ do: [note: m should be the number of restart interations]
 
 $h_{i,j} = (Av_{j}, v_{i}), i = 1, 2, ..., j,$
 
-$\hat{v}_{j+1}$ = $Av_{j} - \sum_{i=1}^jh_{i}, j{vi},$
+$ \hat{v}_{j+1}$ = Av_{j} - \sum_{i=1}^jh_{i}, j{vi}$ 
