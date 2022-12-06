@@ -38,7 +38,7 @@ class GMRES:
         self.clear()
         self.main_msg()
     
-    def clear(self): # system agnostic 
+    def clear(self) -> None: # system agnostic 
         if(name == 'nt'):
             _ = system('cls')
         else:
@@ -56,7 +56,7 @@ class GMRES:
         A = sparse.random(self.n, self.m, density=self.dens)
         return A.toarray()
     
-    def Creating_msg(self):
+    def Creating_msg(self) -> None:
         '''Create Matrix-A for Ax=b'''
         print('Creating Matrix A')
         n = int(input("Enter Size of N rows "))
@@ -66,21 +66,19 @@ class GMRES:
         self.m = m
         self.dens = (dens / 100)
     
-    def vector_b(self):
+    def vector_b(self) -> None:
         '''Create Vector-b for Ax=b'''
         print('Creating Vector b')
         v = int(input("Enter Size of Vector column "))
         self.v = v
     
-    def main_msg(self):
+    def main_msg(self) -> None:
         print('Welcome to the GMRES Assignment-1 Calulator, ' 
         + ' Select from the following Options')
         self.menu()
-        # Add further options, use Create_msg as a setup example
-        # Start here once test methods are flowing correctly
         self.Creating_msg()
 
-    def gmres(self, A, b, x0, nmax_iter):
+    def gmres(self, A, b, x0, nmax_iter) -> float:
         print('Initializing Matrix')
 
         r = b - np.asarray(np.dot(A, x0)).reshape(-1)
@@ -112,7 +110,7 @@ class GMRES:
             x.append(np.dot(np.asarray(q).transpose(), result) + x0)
 
         return x
-    def menu(self):
+    def menu(self) -> None:
         print('1. GMRES')
         print('2. Build Matrix')
         print('3. Vector B')
@@ -126,13 +124,12 @@ class GMRES:
                 b = np.array([3, 2])
                 x0 = np.array([1, 2])
 
-                e = 0
                 nmax_iter = 5
 
                 x = self.gmres(A, b, x0, nmax_iter)
-
                 print(x)
-                self.gmres()
+
+                _exit(0)
             case 2:
                 self.build_matrix()
             case 3:
