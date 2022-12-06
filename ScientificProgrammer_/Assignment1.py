@@ -3,6 +3,8 @@ import scipy.sparse as sparse
 from os import system, name, _exit
 import scipy.stats as stats
 import numpy as np
+import warnings
+warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning) 
  
 STOP = 0b11
 """
@@ -82,6 +84,7 @@ class GMRES:
         print('Initializing Matrix')
 
         r = b - np.asarray(np.dot(A, x0)).reshape(-1)
+
         x = []
         q = [0] * (nmax_iter)
 
@@ -91,12 +94,9 @@ class GMRES:
 
         h = np.zeros((nmax_iter + 1, nmax_iter))
 
-        # for k in range(nmax_iter):
-        #     y = np.asarray(np.dot(A, q[k])).reshape(-1)
         for k in range(min(nmax_iter, A.shape[0])):
             y = np.asarray(np.dot(A, q[k])).reshape(-1)
 
-            # for j in range(k):
             for j in range(k + 1):
                 h[j, k] = np.dot(q[j], y)
                 y = y - h[j, k] * q[j]
@@ -107,13 +107,11 @@ class GMRES:
             b = np.zeros(nmax_iter + 1)
             b[0] = np.linalg.norm(r)
 
-            result = np.linalg.lstsq(h, b)[0]
+            result = np.linalg.lstsq(h, b, rcond=None)[0]
 
             x.append(np.dot(np.asarray(q).transpose(), result) + x0)
 
         return x
-
-
     def menu(self):
         print('1. GMRES')
         print('2. Build Matrix')
