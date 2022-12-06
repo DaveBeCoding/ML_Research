@@ -20,12 +20,9 @@ def GMRes(A, b, x0, nmax_iter):
 
     h = np.zeros((nmax_iter + 1, nmax_iter))
 
-    # for k in range(nmax_iter):
-    #     y = np.asarray(np.dot(A, q[k])).reshape(-1)
     for k in range(min(nmax_iter, A.shape[0])):
         y = np.asarray(np.dot(A, q[k])).reshape(-1)
 
-        # for j in range(k):
         for j in range(k + 1):
             h[j, k] = np.dot(q[j], y)
             y = y - h[j, k] * q[j]
