@@ -1,9 +1,6 @@
 from time import sleep as pause
-import scipy.sparse as sparse
 from os import system, name, _exit
-import scipy.stats as stats
-import numpy as np
-import warnings
+import scipy.stats as stats, numpy as np, warnings, scipy.sparse as sparse
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning) 
  
 STOP = 0b11
