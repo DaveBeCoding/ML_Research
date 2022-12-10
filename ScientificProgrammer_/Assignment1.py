@@ -152,7 +152,7 @@ try:
         pause(STOP)
         gmres.main()
 except:
-    system('clear')
+    system('cls') if name == 'nt' else system('clear')
     print("...\n")
     print("-----------------------------------------------------------------|")
     print("ERROR, Please check your configuration                           ")
