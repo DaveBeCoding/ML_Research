@@ -1,8 +1,13 @@
 from time import sleep as pause
 from os import system, name, _exit
-import scipy.stats as stats, numpy as np, warnings, scipy.sparse as sparse
-warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning) 
- 
+try:
+    import scipy.stats as stats, numpy as np, warnings, scipy.sparse as sparse
+    warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning) 
+except:
+    print("You should install the appropriate modules")
+    print("...\n")
+    print("pip install :: scipy.stats,  numpy, warnings, scipy.sparse")
+    print("...\n")
 STOP = 0b11
 """
 Create infrastructure for studying this algorithm
@@ -48,11 +53,6 @@ class GMRES:
         print(n_X_m)
         pause(STOP)
     
-    def build_matrix(self) -> int:
-        np.random.seed(42)
-        A = sparse.random(self.n, self.m, density=self.dens)
-        return A.toarray()
-    
     def Creating_msg(self) -> None:
         '''Create Matrix-A for Ax=b'''
         print('Creating Matrix A')
@@ -75,6 +75,10 @@ class GMRES:
         self.menu()
         self.Creating_msg()
 
+    def build_matrix(self) -> int:
+        np.random.seed(42)
+        A = sparse.random(self.n, self.m, density=self.dens)
+        return A.toarray()
     def gmres(self, A, b, x0, nmax_iter) -> float:
         print('Initializing Matrix')
 
@@ -148,4 +152,13 @@ try:
         pause(STOP)
         gmres.main()
 except:
-    print("ERROR, Please check your configuration")
+    system('clear')
+    print("...\n")
+    print("-----------------------------------------------------------------|")
+    print("ERROR, Please check your configuration                           ")
+    print("...\n                                                            ")
+    print("Install the appropriate modules as well               ")
+    print("...\n                                                            ") 
+    print("pip install :: scipy.stats,  numpy, warnings, scipy.sparse       ")
+    print("...\n                                                            ")
+    print("-----------------------------------------------------------------|")
