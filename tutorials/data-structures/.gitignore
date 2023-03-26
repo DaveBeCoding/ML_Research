@@ -1,7 +1,7 @@
+#GENERAL 
 note*
 *build/ 
 /test
-#*.txt
 *.exe
 *notes/
 
