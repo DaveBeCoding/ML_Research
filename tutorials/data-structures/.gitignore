@@ -1,8 +1,9 @@
 note*
 *build/ 
 /test
-*.txt
+#*.txt
 *.exe
+*notes/
 
 #CMAKE 
 CMakeLists.txt.user
