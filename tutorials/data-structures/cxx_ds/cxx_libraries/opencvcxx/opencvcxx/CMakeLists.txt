@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
-project(opencv_builder)
 
-#set(OpenCV_DIR /Users/<user-name>/<Path-to-Dir>/ML_RESEARCH/tutorials/data-structures/cxx_ds/cxx_libraries/opencvcxx/opencv/build) 
+project(opencv_builder)
 
 set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../opencv/build)
 
