@@ -1,3 +1,17 @@
+/*
+     
+                                           histogram equation
+
+**Compute the image histogram: Calculate the histogram of the image, which is a plot of the frequency of occurrence of each pixel intensity value in the image.
+
+**Compute the cumulative distribution function (CDF): Calculate the cumulative distribution function of the histogram, which is a function that maps each pixel intensity value to a new intensity value.
+
+**Compute the new intensity values: Using the CDF, calculate the new intensity value for each pixel in the image.
+Update the image: Replace each pixel in the image with its corresponding new intensity value.
+ 
+*/
+
+
 #include <opencv2/opencv.hpp>
 #include <filesystem>
 
