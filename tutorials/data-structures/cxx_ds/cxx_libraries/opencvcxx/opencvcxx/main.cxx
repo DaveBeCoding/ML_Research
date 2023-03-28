@@ -1,21 +1,31 @@
 #include <opencv2/opencv.hpp>
+#include <iostream>
 
+using namespace std;
 using namespace cv;
 
-int main()
-{
-    Mat img = imread("v-skater.jpeg"); // load input image
-    Mat sharpeningKernel = (Mat_<float>(3,3) << 0, -1, 0, -1, 5, -1, 0, -1, 0); // sharpening kernel
-    Mat sharpenedImg;
+int main() {
+    // Load the image
+    Mat img = imread("vskater.jpg", IMREAD_GRAYSCALE);
+    
+    if (img.empty()) {
+        cerr << "Error: Could not read image file." << endl;
+        return -1;
+    }
 
-    filter2D(img, sharpenedImg, -1, sharpeningKernel); // apply filter to image
+    // Enhance the image using histogram equalization
+    Mat enhanced_img;
+    equalizeHist(img, enhanced_img);
 
-    namedWindow("Input Image", WINDOW_NORMAL);
-    namedWindow("Sharpened Image", WINDOW_NORMAL);
+    // Display the original and enhanced images
+    namedWindow("Original Image", WINDOW_AUTOSIZE);
+    imshow("Original Image", img);
+    namedWindow("Enhanced Image", WINDOW_AUTOSIZE);
+    imshow("Enhanced Image", enhanced_img);
 
-    imshow("Input Image", img);
-    imshow("Sharpened Image", sharpenedImg);
+    // Wait for a key press
     waitKey(0);
 
     return 0;
 }
+
