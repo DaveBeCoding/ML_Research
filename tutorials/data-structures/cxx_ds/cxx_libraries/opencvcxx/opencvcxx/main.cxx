@@ -17,7 +17,6 @@ Update the image: Replace each pixel in the image with its corresponding new int
 
 using namespace cv;
 
-//namespace fs = std::filesystem;
 namespace fs = std::__fs::filesystem;
 
 int main() {
