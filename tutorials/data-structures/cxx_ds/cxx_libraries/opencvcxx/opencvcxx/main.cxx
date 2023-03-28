@@ -4,7 +4,7 @@ using namespace cv;
 
 int main()
 {
-    Mat img = imread("input_image.jpg"); // load input image
+    Mat img = imread("v-skater.jpeg"); // load input image
     Mat sharpeningKernel = (Mat_<float>(3,3) << 0, -1, 0, -1, 5, -1, 0, -1, 0); // sharpening kernel
     Mat sharpenedImg;
 

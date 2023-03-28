@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
-project(my_project)
+project(image_enhancer_OpenCV)
 
 # Find OpenCV installed via Homebrew
 find_package(OpenCV REQUIRED PATHS /opt/homebrew/lib/cmake/opencv4)
 
 # Add the executable target
-add_executable(my_executable main.cxx)
+add_executable(${PROJECT_NAME}.exe main.cxx)
 
 # Link against OpenCV
-target_link_libraries(my_executable ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME}.exe ${OpenCV_LIBS})
 
