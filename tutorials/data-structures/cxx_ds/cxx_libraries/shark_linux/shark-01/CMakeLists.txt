@@ -8,8 +8,9 @@ message(STATUS 'SHARK PATH ---  ' ${SHARK_DIR})
 # Find the Shark libraries
 find_package(Shark REQUIRED PATHS ${SHARK_DIR})
 find_package(Boost REQUIRED COMPONENTS serialization system filesystem)
-find_package(Shark REQUIRED COMPONENTS Dataset)
-include_directories(${SHARK_DIR}/include)
+#find_package(Shark REQUIRED COMPONENTS Dataset)
+include_directories(${SHARK_DIR}../Shark)
+include_directories(${SHARK_DIR}../Shark/include/shark)
 #include_directories(../Shark/include/shark/Data/Dataset.h)
 
 # Add the SharkTest executable
