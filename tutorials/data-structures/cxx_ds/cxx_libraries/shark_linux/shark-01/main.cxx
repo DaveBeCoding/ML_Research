@@ -1,5 +1,12 @@
 #include <iostream>
+
+//#include "../Shark/include/shark/Data/Dataset.h"
+//#include "../Shark/include/shark/Core/Exception.h/"
+
 #include <shark/Data/Dataset.h>
+#include <shark/Core/Exception.h>
+#include "../Shark/build/include/shark/Core/Shark.h"
+
 #include <shark/ObjectiveFunctions/Loss/SquaredLoss.h>
 #include <shark/Models/LinearModel.h>
 #include <shark/Algorithms/Trainers/LinearRegression.h>
