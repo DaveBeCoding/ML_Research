@@ -1,3 +1,4 @@
+#include <iostream>
 #include <vector>
 
 class Operation {
@@ -14,3 +15,11 @@ public:
     }
 };
 
+
+int main(){
+
+
+    std::cout << "pass" << std::endl;
+
+return 0;
+}
