@@ -31,6 +31,21 @@ To use the `MLPClassifier` model:
 
 #### Model Reports
 
+| Epoch   | Train Loss | Train Accuracy | Val Loss | Val Accuracy |
+|---------|------------|----------------|----------|--------------|
+| 1/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 2/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 3/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 4/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 5/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 6/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 7/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 8/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 9/10    | nan        | 0.2568         | nan      | 0.2277       |
+| 10/10   | nan        | 0.2568         | nan      | 0.2277       |
+| Average | nan        | 0.2568         | nan      | 0.2277       |
+
+
 <details>
 <summary>Click to expand</summary>
 
@@ -42,6 +57,7 @@ To use the Sequential model:
 1. Initialize an instance of the model:
    ```python
    model = Sequential()
+
 
 
 
